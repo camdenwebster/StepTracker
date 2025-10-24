@@ -89,9 +89,10 @@ struct DashboardView: View {
             }
             .padding()
             .task {
-                // Uncomment to add mock data at launch
-//                await hkManager.addSimulatorData()
                 isShowingPermissionPrimingSheet = !hasSeenPermissionPriming
+
+                // Uncomment to add mock data at launch
+                await hkManager.addSimulatorData()
             }
             .navigationTitle("Dashboard")
             .navigationDestination(for: HealthMetricContext.self) { metric in
