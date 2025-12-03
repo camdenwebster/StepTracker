@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		19CD45E62EE0C3E600817E8F /* HealthMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD45E52EE0C3E600817E8F /* HealthMetric.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		1964505E2E4D776D00918795 /* StepTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19CD45E52EE0C3E600817E8F /* HealthMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HealthMetric.swift; path = StepTracker/Models/HealthMetric.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		196450552E4D776D00918795 = {
 			isa = PBXGroup;
 			children = (
+				19CD45E52EE0C3E600817E8F /* HealthMetric.swift */,
 				196450602E4D776D00918795 /* StepTracker */,
 				1964505F2E4D776D00918795 /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19CD45E62EE0C3E600817E8F /* HealthMetric.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
