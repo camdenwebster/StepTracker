@@ -100,6 +100,8 @@ struct DashboardView: View {
 
                 // Uncomment to add mock data at launch
                 await hkManager.addSimulatorData()
+                await hkManager.fetchStepCount()
+
             }
             .navigationTitle("Dashboard")
             .navigationDestination(for: HealthMetricContext.self) { metric in
