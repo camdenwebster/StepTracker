@@ -34,9 +34,13 @@ import Observation
             intervalComponents: .init(day: 1)
         )
         
-        let stepCounts = try! await stepsQuery.result(for: store)
-        stepData = stepCounts.statistics().map {
-            .init(date: $0.startDate, value: $0.sumQuantity()?.doubleValue(for: .count()) ?? 0)
+        do {
+            let stepCounts = try await stepsQuery.result(for: store)
+            stepData = stepCounts.statistics().map {
+                .init(date: $0.startDate, value: $0.sumQuantity()?.doubleValue(for: .count()) ?? 0)
+            }
+        } catch {
+            
         }
     }
     
@@ -53,9 +57,13 @@ import Observation
                                                                 anchorDate: endDate,
                                                                 intervalComponents: .init(day: 1))
         
-        let weights = try! await weightQuery.result(for: store)
-        weightData = weights.statistics().map {
-            .init(date: $0.startDate, value: $0.mostRecentQuantity()?.doubleValue(for: .pound()) ?? 0)
+        do {
+            let weights = try await weightQuery.result(for: store)
+            weightData = weights.statistics().map {
+                .init(date: $0.startDate, value: $0.mostRecentQuantity()?.doubleValue(for: .pound()) ?? 0)
+            }
+        } catch {
+            
         }
     }
     
@@ -77,7 +85,11 @@ import Observation
             mockSamples.append(weightSample)
         }
         
-        try! await store.save(mockSamples)
-        print("✅ Dummy data sent up")
+        do {
+            try await store.save(mockSamples)
+            print("✅ Dummy data sent up")
+        } catch {
+            
+        }
     }
 }
